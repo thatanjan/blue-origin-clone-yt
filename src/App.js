@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid'
 
 import PageSection from 'components/PageSection/PageSection'
 import Social from 'components/Social/Social'
+import Footer from 'components/Footer/Footer'
 
 import pageData from './pageData'
 
@@ -14,6 +15,8 @@ const App = () => {
 			))}
 
 			<Social />
+
+			<Footer />
 		</div>
 	)
 }
