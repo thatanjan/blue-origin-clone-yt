@@ -18,12 +18,13 @@ const PageSection = ({
 	button,
 	image,
 	boldFirst,
+	centeredText,
 }) => {
 	return (
 		<SectionContainer>
 			<BackgroundImage src={image} />
 
-			<ContentContainer>
+			<ContentContainer centeredText={centeredText}>
 				{tag && <Tag>{tag}</Tag>}
 
 				<Title>

@@ -2,6 +2,10 @@ import { useState } from 'react'
 
 import featherImg from 'media/icons/featherFooter.svg'
 
+import useMdMediaQuery from 'hooks/useMdMediaQuery'
+
+import Arrow from './Arrow'
+
 import {
 	Column,
 	Container,
@@ -17,15 +21,6 @@ import {
 	PrivacyLinks,
 } from './Footer.styles'
 
-const Arrow = (second) => (
-	<svg xmlns='http://www.w3.org/2000/svg' className='arrow' viewBox='0 0 16 16'>
-		<path
-			fill='evenodd'
-			d='M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z'
-		></path>
-	</svg>
-)
-
 const linkList = [
 	'careers',
 	'gallery',
@@ -35,8 +30,27 @@ const linkList = [
 	'Accessibility',
 ]
 
+const LegalColumn = () => (
+	<Column>
+		<LegalContainer>
+			<Text>© 2007 - 2022 BLUE ORIGIN, ALL RIGHTS RESERVED.</Text>
+
+			<PrivacyLinks>
+				<a href='/'>
+					<Text>Privacy Policy</Text>
+				</a>
+				<a href='/'>
+					<Text>Terms of Use</Text>
+				</a>
+			</PrivacyLinks>
+		</LegalContainer>
+	</Column>
+)
+
 const Footer = () => {
 	const [inputVal, setInputVal] = useState('')
+
+	const isMd = useMdMediaQuery()
 
 	const handleSubmit = (e) => {
 		e.preventDefault()
@@ -47,6 +61,8 @@ const Footer = () => {
 		<Container>
 			<Column className='first'>
 				<FeatherImg src={featherImg} />
+
+				{isMd && <LegalColumn />}
 			</Column>
 
 			<Column>
@@ -79,20 +95,7 @@ const Footer = () => {
 				</SubscribeForm>
 			</Column>
 
-			<Column>
-				<LegalContainer>
-					<Text>© 2007 - 2022 BLUE ORIGIN, ALL RIGHTS RESERVED.</Text>
-
-					<PrivacyLinks>
-						<a href='/'>
-							<Text>Privacy Policy</Text>
-						</a>
-						<a href='/'>
-							<Text>Terms of Use</Text>
-						</a>
-					</PrivacyLinks>
-				</LegalContainer>
-			</Column>
+			{!isMd && <LegalColumn />}
 		</Container>
 	)
 }

@@ -1,12 +1,22 @@
 import styled from 'styled-components'
 
+import { breakpoints } from 'globalVars'
+
 export const Container = styled.section`
 	background: blue;
-	display: grid;
-	justify-content: center;
-	justify-items: center;
+	/* display: grid; */
+	/* justify-content: center; */
+	/* justify-items: center; */
 	padding: 2rem 0;
-	grid-row-gap: 2.5rem;
+	/* grid-row-gap: 2.5rem; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+
+	${breakpoints.md} {
+		flex-wrap: nowrap;
+	}
 `
 
 export const FollowText = styled.h3`
@@ -16,6 +26,14 @@ export const FollowText = styled.h3`
 	letter-spacing: 0.2rem;
 	text-align: center;
 	text-transform: uppercase;
+	flex-basis: 100%;
+	margin-bottom: 2rem;
+
+	${breakpoints.md} {
+		flex-basis: auto;
+		margin-bottom: 0;
+		margin-right: 4rem;
+	}
 `
 
 export const IconsContainer = styled.div`

@@ -20,6 +20,7 @@ const pageData = [
 			'Orbital Reef will be the premier mixed-use space station in low Earth orbit. Blue Origin, Sierra Space, Boeing, Redwire Space, Genesis Engineering Solutions, and Arizona State University form the powerful industry and academic team to deliver Orbital Reef in this decade.',
 		button: 'Meet Orbital Reef',
 		image: darkEarth,
+		centeredText: true,
 	},
 	{
 		tag: 'Gradatim Ferociter',

@@ -1,4 +1,6 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+
+import { breakpoints } from 'globalVars'
 
 export const SectionContainer = styled.section`
 	width: 100vw;
@@ -12,7 +14,7 @@ export const SectionContainer = styled.section`
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgba(0, 0, 0, 0.1);
+		background-color: rgba(0, 0, 0, 0.2);
 	}
 `
 
@@ -29,8 +31,17 @@ export const ContentContainer = styled.div`
 	left: 10%;
 	transform: translateY(-50%);
 	width: 80%;
-	z-index: 10;
+	z-index: 5;
 	text-transform: uppercase;
+	max-width: 100rem;
+
+	${(props) =>
+		props.centeredText &&
+		css`
+			text-align: center;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		`}
 `
 
 export const Title = styled.h2`
@@ -44,6 +55,10 @@ export const Title = styled.h2`
 		display: block;
 		font-weight: 700;
 	}
+
+	${breakpoints.sm} {
+		font-size: 7rem;
+	}
 `
 
 export const Subtitle = styled.p`
@@ -51,6 +66,10 @@ export const Subtitle = styled.p`
 	letter-spacing: 0.1rem;
 	margin-bottom: 2rem;
 	text-transform: none;
+
+	${breakpoints.sm} {
+		font-size: 3rem;
+	}
 `
 
 export const Button = styled.a`
