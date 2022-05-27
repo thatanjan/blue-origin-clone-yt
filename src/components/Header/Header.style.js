@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import { breakpoints } from 'globalVars'
+
 const linkUnderline = css`
 	&:after {
 		background-color: #38f;
@@ -111,10 +113,10 @@ export const FlyButton = styled.button`
 		display: none;
 	}
 
-	background: ${(props) => (props.displayBG ? '#03d' : 'white')};
+	background: ${(props) => (props.displayBG ? 'white' : '#03d')};
 	border: none;
 	padding: 2rem;
-	color: ${(props) => (props.displayBG ? 'white' : '#03d')};
+	color: ${(props) => (props.displayBG ? '#03d' : 'white')};
 	text-transform: uppercase;
 	font-weight: 600;
 	cursor: pointer;
@@ -128,5 +130,20 @@ export const FlyButton = styled.button`
 
 	&:hover span:after {
 		transform: scaleX(1);
+	}
+`
+
+export const HeaderNavigation = styled.nav`
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+
+	& > * {
+		margin: 0 0.5rem;
+
+		${breakpoints.lg} {
+			margin: 0 2rem;
+		}
 	}
 `

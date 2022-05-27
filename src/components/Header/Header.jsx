@@ -16,6 +16,7 @@ import {
 	NavLink,
 	LanguageIconContainer,
 	FlyButton,
+	HeaderNavigation,
 } from './Header.style'
 
 import logo from 'media/icons/logo.svg'
@@ -94,12 +95,16 @@ const Header = () => {
 			displayHeader={displayHeader}
 		>
 			<InnerContainer>
+				<LogoContainer>
+					<Logo src={logo} />
+				</LogoContainer>
+
+				{isMd && (
+					<NavigationContainer displayBG={displayBG} Parent={HeaderNavigation} />
+				)}
+
 				{!isMd && (
 					<>
-						<LogoContainer>
-							<Logo src={logo} />
-						</LogoContainer>
-
 						<NavIconContainer>
 							{isNavOpen ? (
 								<CloseIcon onClick={toggleSideNav} />
