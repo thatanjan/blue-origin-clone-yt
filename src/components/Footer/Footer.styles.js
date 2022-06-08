@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import { breakpoints } from 'globalvars'
+
 const noOutline = css`
 	&:focus {
 		outline: none;
@@ -9,6 +11,10 @@ const noOutline = css`
 export const Container = styled.footer`
 	background: #222;
 	display: grid;
+
+	${breakpoints.md} {
+		grid-template-columns: repeat(3, 1fr);
+	}
 `
 
 export const Column = styled.div`
@@ -27,6 +33,14 @@ export const Column = styled.div`
 		width: 70%;
 		opacity: 0.2;
 		display: block;
+
+		${breakpoints.md} {
+			height: 80%;
+			width: 0.1rem;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+		}
 	}
 
 	&.form {

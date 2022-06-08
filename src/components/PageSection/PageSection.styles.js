@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import { breakpoints } from 'globalvars'
+
 export const SectionContainer = styled.section`
 	width: 100vw;
 	height: 100vh;
@@ -53,6 +55,10 @@ export const Title = styled.h2`
 		font-weight: 700;
 		display: block;
 	}
+
+	${breakpoints.sm} {
+		font-size: 7rem;
+	}
 `
 
 export const Subtitle = styled.p`
@@ -60,6 +66,10 @@ export const Subtitle = styled.p`
 	letter-spacing: 0.1rem;
 	margin-bottom: 2rem;
 	text-transform: none;
+
+	${breakpoints.sm} {
+		font-size: 3rem;
+	}
 `
 
 export const Button = styled.a`

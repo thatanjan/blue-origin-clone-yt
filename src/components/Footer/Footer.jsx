@@ -2,6 +2,8 @@ import { useState } from 'react'
 
 import featherImg from 'media/icons/featherFooter.svg'
 
+import useMDmediaQuery from 'hooks/useMDmediaQuery'
+
 import {
 	Column,
 	Container,
@@ -54,10 +56,13 @@ const LegalCol = () => (
 )
 
 const Footer = () => {
+	const isMD = useMDmediaQuery()
 	return (
 		<Container>
 			<Column className='first'>
 				<FeatherImg src={featherImg} />
+
+				{isMD && <LegalCol />}
 			</Column>
 
 			<Column>
@@ -85,7 +90,7 @@ const Footer = () => {
 				</SubscribeForm>
 			</Column>
 
-			<LegalCol />
+			{!isMD && <LegalCol />}
 		</Container>
 	)
 }

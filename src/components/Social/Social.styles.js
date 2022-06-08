@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { breakpoints } from 'globalvars'
+
 export const Container = styled.section`
 	background: #03d;
 	padding: 2rem 0;
@@ -7,6 +9,10 @@ export const Container = styled.section`
 	flex-wrap: wrap;
 	justify-content: center;
 	align-items: center;
+
+	${breakpoints.md} {
+		flex-wrap: unwrap;
+	}
 `
 
 export const FollowText = styled.h3`
@@ -17,6 +23,12 @@ export const FollowText = styled.h3`
 	text-transform: uppercase;
 	flex-basis: 100%;
 	margin-bottom: 2rem;
+
+	${breakpoints.md} {
+		flex-basis: auto;
+		margin-bottom: 0;
+		margin-right: 4rem;
+	}
 `
 
 export const IconsContainer = styled.div`

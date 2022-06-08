@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components'
 
+import { breakpoints } from 'globalvars'
+
 const linkUnderLine = css`
 	&:after {
 		content: '';
@@ -122,5 +124,9 @@ export const HeaderNavigation = styled.nav`
 
 	& > * {
 		margin: 0 0.5rem;
+
+		${breakpoints.lg} {
+			margin: 0 2rem;
+		}
 	}
 `
